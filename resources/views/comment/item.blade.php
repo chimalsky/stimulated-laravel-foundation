@@ -1,4 +1,4 @@
-<article class="cell shrink grid-x">
+<article class="cell grid-x">
     <p class="cell">
         {!! $comment->body !!}
     </p>
