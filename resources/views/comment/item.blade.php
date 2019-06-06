@@ -8,12 +8,12 @@
     </p>
 
     <footer class="cell grid-x">
-        <p class="cell">
+        <p class="cell secondary">
+            <i>
             {{ $comment->creator->name }}
-        </p>
-
-        <p class="cell">
+            | 
             {{ $comment->created_at }}
+            </i>
         </p>
     </footer>
 </article>
