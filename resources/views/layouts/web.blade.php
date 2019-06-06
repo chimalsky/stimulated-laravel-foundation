@@ -23,7 +23,7 @@
             @yield('header')
         </header>
 
-        <main class="web grid-container grid-x">
+        <main class="web grid-container grid-x grid-margin-y">
             @isset ($query)
                 <aside class="cell callout">
                     Results for <strong>{{ $query }}</strong>
