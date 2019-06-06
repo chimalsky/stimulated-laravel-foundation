@@ -16,15 +16,13 @@
         </p>
 
         @if ($fulfillment->wish->fulfilled)
-            @if ($fulfillment->fulfilled)
-             <p class="cell shrink callout success">
+            <p class="cell large-shrink callout success">
+                @if ($fulfillment->fulfilled)
                     This wish has been fulfilled, but the conversation can continue
-                </p>
-            @else
-                <p class="cell shrink callout success">
+                @else
                     This wish has been fulfilled by someone else, but conversations can continue
-                </p>
-            @endif
+                @endif
+            </p>
         @endif
     </header>
 

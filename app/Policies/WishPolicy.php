@@ -98,6 +98,10 @@ class WishPolicy
             return false;
         }
 
+        if ($wish->fulfilled) {
+            return false;
+        }
+
         return true;
     }
 }

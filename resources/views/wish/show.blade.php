@@ -16,7 +16,7 @@
     </p>
 
     @if ($wish->fulfilled)
-        <div class="callout success">
+        <div class="callout success cell large-shrink">
             This wish has been fulfilled!
         </div>
     @endif
@@ -49,11 +49,11 @@
     </section>
 
     <section class="cell">
-        @isset($wish->fulfillments)
-            <div class="callout">
+        @if(count($wish->fulfillments))
+            <div class="callout grid-margin-y">
                 @include('wish.fulfillment.list', ['fulfillments' => $wish->fulfillments])
             </div>
-        @endisset
+        @endif
     </section>
 </main>
 
