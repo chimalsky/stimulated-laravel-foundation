@@ -33,6 +33,11 @@ class Fulfillment extends Model
         return $this->comments->first();
     }
 
+    public function getFulfilledAttribute()
+    {
+        return $this->status == 2;
+    }
+
     /**
      * Attribute mutations
      */
@@ -53,4 +58,18 @@ class Fulfillment extends Model
         $this->recipient_id = $recipient->id;
         $this->setRelation('giver', $recipient);
     }
+
+    /**
+     * Local Scopes
+     */
+
+     public function scopeUnfulfilled($query)
+     {
+         return $query->where('status', 1);
+     }
+
+     public function scopeFulfilled($query)
+     {
+         return $query->where('status', 2);
+     }
 }

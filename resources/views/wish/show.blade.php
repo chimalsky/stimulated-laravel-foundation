@@ -15,15 +15,23 @@
         {{ $wish->user->name }} wished for this on <span data-controller="date">{{ $wish->created_at }}</span>
     </p>
 
+    @if ($wish->fulfilled)
+        <div class="callout success">
+            This wish has been fulfilled!
+        </div>
+    @endif
+
     <section class="cell grid-x">
         @can('delete', $wish)
             <form action="{{ route('wish.destroy', $wish) }}" method="post" class="cell">
                 @csrf 
                 @method('delete')
 
-                <button class="button alert">
-                    I don't need this anymore. Cancel it.
-                </button>
+                @if ($wish->unfulfilled)
+                    <button class="button alert">
+                        I don't need this anymore. Cancel it.
+                    </button>
+                @endif
             </form>
         @endcan
 

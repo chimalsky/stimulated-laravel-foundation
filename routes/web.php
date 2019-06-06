@@ -34,6 +34,8 @@ Route::post('/wish/{wish}/fulfillment', 'WishFulfillmentController@store')
 
 Route::get('/wish/fulfillment/{fulfillment}', 'WishFulfillmentController@show')
     ->name('wish.fulfillment.show');
+Route::put('/wish/fulfillment/{fulfillment}', 'WishFulfillmentController@update')
+    ->name('wish.fulfillment.update');
 
 Route::post('/wish/fulfillment/{fulfillment}/comment', 'WishFulfillmentCommentController@store')
     ->name('wish.fulfillment.comment.store');

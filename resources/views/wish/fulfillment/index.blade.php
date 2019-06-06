@@ -2,10 +2,18 @@
 
 @section ('content')
 
-<main class="grid-x">
+<main class="grid-x grid-margin-y">
     @isset($user)   
         <h1 class="cell">
-            Wish Fulfillments for {{ $user->name }} 
+            @if (request()->query('fulfilled'))
+                <span>
+                    Completed
+                </span>
+            @endif
+
+            Wish Fulfillments                
+            
+            for {{ $user->name }}
         </h1>
     @endisset
 
@@ -20,6 +28,23 @@
             </a>
         </article>
     @endforeach
+
+    <footer class="cell grid-x grid-margin-y align-right">
+        @if (request()->query('fulfilled'))
+            <a class="cell button hollow shrink" href="{{ route('wish.fulfillment.index', [
+                'user' => $user->id ?? null
+            ]) }}">
+                See only incomplete Fulfillments 
+            </a>
+        @else
+            <a class="cell button hollow shrink" href="{{ route('wish.fulfillment.index', [
+                'fulfilled' => true,
+                'user' => $user->id ?? null
+                ]) }}">
+                See only completed Wish Fulfillments 
+            </a>
+        @endif
+    </footer>
 </main>
 
 @endsection

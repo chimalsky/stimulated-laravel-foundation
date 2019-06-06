@@ -28,11 +28,22 @@ class WishFulfillmentController extends Controller
         $userQuery = $request->query('user');
         $user = $userQuery ? User::findOrFail($userQuery) : null;
 
+        $fulfilledQuery = $request->query('fulfilled');
+
+        $fulfillments = new Fulfillment;
+
         if ($user) {
-            $fulfillments = $user->fulfillments;
+            $fulfillments = $user->fulfillments();
+        } 
+
+        if ($fulfilledQuery) {
+            $fulfillments = $fulfillments->fulfilled();
         } else {
-            $fulfillments = Fulfillment::latest('created_at')->get();
+            $fulfillments = $fulfillments->unfulfilled();
         }
+
+        $fulfillments = $fulfillments->latest('created_at')->get();
+        
         return view('wish.fulfillment.index', compact('user', 'fulfillments'));
     }
 
@@ -105,7 +116,12 @@ class WishFulfillmentController extends Controller
      */
     public function update(Request $request, Fulfillment $fulfillment)
     {
-        //
+        $fulfillment->status = 2;
+        $fulfillment->save();
+
+        //Mail::to($wish->user)->queue(new WishFulfillmentCreated($fulfillment));
+
+        return redirect()->route('wish.fulfillment.show', compact('fulfillment'));
     }
 
     /**

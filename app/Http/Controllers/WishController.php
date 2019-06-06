@@ -25,11 +25,22 @@ class WishController extends Controller
         $userQuery = $request->query('user');
         $user = $userQuery ? User::findOrFail($userQuery) : null;
 
+        $fulfilledQuery = $request->query('fulfilled');
+
+        $wishes = new Wish;
+
         if ($user) {
-            $wishes = $user->wishes;
+            $wishes = $user->wishes();
+        } 
+
+        if ($fulfilledQuery) {
+            $wishes = $wishes->fulfilled();
         } else {
-            $wishes = Wish::latest('created_at')->get();
+            $wishes = $wishes->unfulfilled();
         }
+
+        $wishes = $wishes->latest('created_at')->get();
+
         return view('wish.index', compact('user', 'wishes'));
     }
 
