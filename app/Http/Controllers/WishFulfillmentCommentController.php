@@ -38,7 +38,7 @@ class WishFulfillmentCommentController extends Controller
     public function store(Request $request, Fulfillment $fulfillment)
     {
         $request->validate([
-            'body' => 'required',
+            'comment' => 'required',
         ]);
 
         $fulfillment->comment([

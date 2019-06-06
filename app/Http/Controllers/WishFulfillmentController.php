@@ -7,6 +7,8 @@ use App\User;
 use App\Wish;
 use App\Fulfillment;
 use Illuminate\Http\Request;
+use App\Mail\WishFulfillmentCreated;
+use Illuminate\Support\Facades\Mail;    
 
 class WishFulfillmentController extends Controller
 {
@@ -65,6 +67,8 @@ class WishFulfillmentController extends Controller
         $fulfillment->comment([
             'body' => $request->input('introduction')
         ], $fulfillment->giver);
+
+        Mail::to($wish->user)->queue(new WishFulfillmentCreated($fulfillment));
 
         return redirect()->route('wish.fulfillment.show', compact('fulfillment'));
     }

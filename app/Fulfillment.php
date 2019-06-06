@@ -28,6 +28,11 @@ class Fulfillment extends Model
         return $this->belongsTo(Wish::class);
     }
 
+    public function getIntroductionAttribute()
+    {
+        return $this->comments->first();
+    }
+
     /**
      * Attribute mutations
      */

@@ -16,6 +16,11 @@ Route::get('/home', function() {
     return redirect()->route('home');
 });
 
+Route::get('mailable', function () {
+    $fulfillment = App\Fulfillment::find(1);
+
+    return new App\Mail\WishFulfillmentCreated($fulfillment);
+});
 
 Route::get('wish/fulfillment', 'WishFulfillmentController@index')
     ->name('wish.fulfillment.index');

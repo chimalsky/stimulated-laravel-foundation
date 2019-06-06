@@ -15,6 +15,7 @@
         "css-loader": "^2.1.1",
         "datatables.net-zf": "^1.10.19",
         "flatpickr": "^4.5.7",
+        "foundation-emails": "^2.2.1",
         "foundation-sites": "^6.5.3",
         "jquery": "^3.2",
         "laravel-mix": "^4.0.15",

@@ -42,7 +42,7 @@ class FulfillmentPolicy
      */
     public function update(User $user, Fulfillment $fulfillment)
     {
-        return $user->id === $fulfillment->giver_id;
+        return $user->id === $fulfillment->recipient->id;
     }
 
     /**
@@ -80,4 +80,23 @@ class FulfillmentPolicy
     {
         //
     }
+
+    /**
+     * Determine whether the user can attach a comment to the fulfillment.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Fulfillment  $fulfillment
+     * @return mixed
+     */
+    public function attachComment(User $user, Fulfillment $fulfillment) 
+    {
+        if ($user->can('update', $fulfillment)) {
+            return true;
+        }
+
+        if ($user->id === $fulfillment->giver->id) {
+            return true;
+        }
+    }
+
 }

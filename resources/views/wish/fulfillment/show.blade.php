@@ -27,7 +27,7 @@
         </div>
     @endforeach
 
-    @can('update', $fulfillment)
+    @can('attachComment', $fulfillment)
         @include('wish.fulfillment.comment-form', $fulfillment)
     @endcan
 </section>
