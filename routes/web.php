@@ -11,6 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.web');
+Route::get('/', 'WishController@index')->name('home');
+Route::get('/home', function() {
+    return redirect()->route('home');
 });
+
+
+Route::get('wish/fulfillment', 'WishFulfillmentController@index')
+    ->name('wish.fulfillment.index');
+    
+Route::resource('/wish', 'WishController');
+
+Route::get('/wish/{wish}/fulfillment/create', 'WishFulfillmentController@create')
+    ->name('wish.fulfillment.create');
+Route::post('/wish/{wish}/fulfillment', 'WishFulfillmentController@store')
+    ->name('wish.fulfillment.store');
+
+Route::get('/wish/fulfillment/{fulfillment}', 'WishFulfillmentController@show')
+    ->name('wish.fulfillment.show');
+
+Route::post('/wish/fulfillment/{fulfillment}/comment', 'WishFulfillmentCommentController@store')
+    ->name('wish.fulfillment.comment.store');
+
+Auth::routes();

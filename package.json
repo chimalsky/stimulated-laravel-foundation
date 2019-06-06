@@ -11,7 +11,6 @@
     },
     "devDependencies": {
         "@babel/plugin-proposal-class-properties": "^7.3.4",
-        "axios": "^0.18",
         "cross-env": "^5.1",
         "css-loader": "^2.1.1",
         "datatables.net-zf": "^1.10.19",
@@ -30,5 +29,8 @@
         "turbolinks": "^5.2.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "moment": "^2.24.0"
     }
 }

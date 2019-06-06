@@ -10,7 +10,20 @@
 
 @import 'motion-ui.min.css';
 
+@import '~trix/dist/trix.css';
+
+@import 'stimulus-controller-styles';
+
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+h1 {
+  font-size: $font-size-base * 1.2;
+}
+
+article footer {
+  font-color: $secondary;
 }

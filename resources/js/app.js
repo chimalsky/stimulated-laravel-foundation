@@ -5,6 +5,9 @@ import $ from 'jquery'
 import 'foundation-sites'
 import 'datatables.net-zf'
 
+import turbolinks from 'turbolinks'
+import trix from 'trix'
+
 import flatpickr from 'flatpickr'
 import 'flatpickr/dist/flatpickr.min.css'
 
@@ -16,6 +19,7 @@ const application = Application.start()
 const context = require.context("./controllers", true, /\.js$/)
 application.load(definitionsFromContext(context))
 
+turbolinks.start()
 
 window.$ = $
 window.flatpickr = flatpickr

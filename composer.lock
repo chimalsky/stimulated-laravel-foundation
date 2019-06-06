@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58e3b0a8898c1f6a9461c623990f3e26",
+    "content-hash": "59aa5c4ce85c39dc7d663c27afac76c8",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -318,6 +318,69 @@
             "time": "2019-03-17T18:48:37+00:00"
         },
         {
+            "name": "faustbrian/laravel-commentable",
+            "version": "v3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/faustbrian/Laravel-Commentable.git",
+                "reference": "45a82e816499bb7bcb574013394bf68abdf9df7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/faustbrian/Laravel-Commentable/zipball/45a82e816499bb7bcb574013394bf68abdf9df7c",
+                "reference": "45a82e816499bb7bcb574013394bf68abdf9df7c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.6",
+                "illuminate/support": "^5.6",
+                "kalnoy/nestedset": "^4.1",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^5.0",
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^6.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "BrianFaust\\Commentable\\CommentableServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BrianFaust\\Commentable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Faust",
+                    "email": "hello@brianfaust.me",
+                    "homepage": "https://brianfaust.me"
+                }
+            ],
+            "description": "Commentable Polymorphic Eloquent Models for for Laravel 5",
+            "keywords": [
+                "Brian Faust",
+                "Laravel Commentable",
+                "faustbrian",
+                "framework",
+                "laravel",
+                "laravel-commentable"
+            ],
+            "time": "2019-03-15T18:44:27+00:00"
+        },
+        {
             "name": "fideloper/proxy",
             "version": "4.1.0",
             "source": {
@@ -458,6 +521,65 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "kalnoy/nestedset",
+            "version": "v4.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lazychaser/laravel-nestedset.git",
+                "reference": "351fab2eaab95f885a0e52b01985301e93c4d7e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lazychaser/laravel-nestedset/zipball/351fab2eaab95f885a0e52b01985301e93c4d7e7",
+                "reference": "351fab2eaab95f885a0e52b01985301e93c4d7e7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.2 - 5.8",
+                "illuminate/events": "5.2 - 5.8",
+                "illuminate/support": "5.2 - 5.8",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "v4.2.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Kalnoy\\Nestedset\\NestedSetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kalnoy\\Nestedset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kalnoy",
+                    "email": "lazychaser@gmail.com"
+                }
+            ],
+            "description": "Nested Set Model for Laravel 4-5",
+            "keywords": [
+                "database",
+                "hierarchy",
+                "laravel",
+                "nested sets",
+                "nsm"
+            ],
+            "time": "2019-02-27T15:22:30+00:00"
         },
         {
             "name": "laravel/framework",
