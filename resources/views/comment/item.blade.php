@@ -1,4 +1,8 @@
-<article class="cell grid-x">
+<article class="cell grid-x
+    @if ($alignRight)
+        align-right text-right
+    @endif
+">
     <p class="cell">
         {!! $comment->body !!}
     </p>

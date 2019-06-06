@@ -1,4 +1,4 @@
-<nav class="cell grid-x grid-margin-x grid-padding-y">
+<nav class="cell grid-x grid-margin-x grid-padding-y callout">
     <a class="cell shrink" href="{{ route('home') }}">
         Wishes 
     </a>
@@ -36,21 +36,3 @@
         </form>
     @endguest
 </nav>
-
-
-<section class="hide">
-
-<form action="">
-    <select>
-        <option>
-            Need Stuff
-        </option>
-        <option>
-            Want to Donate Stuff
-        </option>
-    </select>
-
-    <input type="text" />
-</form>
-
-</section>

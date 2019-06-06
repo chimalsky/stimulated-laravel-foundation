@@ -18,12 +18,8 @@
 
 <section class="cell">
     @foreach ($fulfillment->comments as $comment)
-        <div class="grid-x cell
-            @if ($comment->creator->id == $fulfillment->recipient->id)
-                align-right text-right
-            @endif
-            ">
-            @include('comment.item', ['comments' => $comment])
+        <div class="grid-x cell">
+            @include('comment.item', ['comments' => $comment, 'alignRight' => ($comment->creator->id == $fulfillment->recipient->id)])
         </div>
     @endforeach
 
