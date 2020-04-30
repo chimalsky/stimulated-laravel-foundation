@@ -17,7 +17,7 @@
         "flatpickr": "^4.6.1",
         "foundation-emails": "^2.2.1",
         "foundation-sites": "^6.5.3",
-        "jquery": "^3.2",
+        "jquery": "^3.5",
         "laravel-mix": "^4.0.16",
         "lodash": "^4.17.5",
         "motion-ui": "^2.0.3",
